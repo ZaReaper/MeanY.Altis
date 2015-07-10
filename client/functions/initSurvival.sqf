@@ -11,7 +11,7 @@
 #define HEALTH_TIME (60*5) //seconds till death
 #define HUNGER_TIME (90*60) //seconds till starving
 #define THIRST_TIME (90*60) //seconds till dehydrated
-#define HEALTH_DELTA TIME_DELTA*(10/HEALTH_TIME)/100
+#define HEALTH_DELTA TIME_DELTA*(100/HEALTH_TIME)/100
 #define HUNGER_DELTA TIME_DELTA*(100/HUNGER_TIME)
 #define THIRST_DELTA TIME_DELTA*(100/THIRST_TIME)
 #define STARVATION "<t size='2' color='#ffff00'> R.I.P.</t><br/><br/>You have died from: <br/><t size='2' color='#ff0000'>starvation</t><br/><br/>You need to eat to survive here!<br/>"
