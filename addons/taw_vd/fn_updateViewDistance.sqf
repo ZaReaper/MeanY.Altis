@@ -22,7 +22,7 @@ switch (true) do
 	};
 };
 
-//if(tawvd_syncObject) then {
-//	setObjectViewDistance [_dist,100];
-//	tawvd_object = _dist;
-//};
+if(tawvd_syncObject) then {
+	setObjectViewDistance [_dist,100];
+	tawvd_object = _dist;
+};
