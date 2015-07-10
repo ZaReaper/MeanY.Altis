@@ -4,7 +4,7 @@
 //	@file Name: fn_sellTruck.sqf
 //	@file Author: Gigatek, Wiking, Lodac
 
-#define SELL_TRUCK_DISTANCE 30
+#define SELL_TRUCK_DISTANCE 20
 #define SELLTRUCK_PRICE_RELATIONSHIP 2
 
 // Check if mutex lock is active.
@@ -20,7 +20,14 @@ _unit = _this select 1;
 _vehicle = vehicle _unit;
 
 //check if caller is the driver
-if ((_unit != driver _vehicle) && !(_vehicle isKindOf "StaticWeapon") && !(_vehicle isKindOf "UAV_01_base_F") && !(_vehicle isKindOf "UAV_02_base_F") && !(_vehicle isKindOf "UGV_01_base_F")) exitWith
+if (_unit != driver _vehicle) exitWith
+{
+	["You must be in the driver seat to sell a vehicle.", 5] call mf_notify_client;
+	mutexScriptInProgress = false;
+};
+
+//check if caller is not in vehicle
+if (_vehicle == _unit) exitWith
 {
 	["You must be in the driver seat to sell a vehicle.", 5] call mf_notify_client;
 	mutexScriptInProgress = false;
@@ -36,12 +43,6 @@ _price = 100; // price = 100 for vehicles not found in vehicle store.
 		_price = (ceil (((_x select 2) / SELLTRUCK_PRICE_RELATIONSHIP) / 5)) * 5;
 	};
 } forEach (call allVehStoreVehicles);
-
-
-if (_vehicle isKindOf "Plane") then
-{
-	_price = 5000;
-};
 
 _text = format ["Stop engine in 10s to sell vehicle. $%1 for this vehicle. This will take some time.\nYou can always abort by getting out of the vehicle.", _price];
 [_text, 5] call mf_notify_client;
@@ -78,7 +79,7 @@ if (!isNil "_price") then
 	// get everyone out of the vehicle
 	_vehicleCrewArr = crew _vehicle;
 	{
-		_x action ["Eject", vehicle _x];
+		_x action ["getout", vehicle _x];
 	} foreach _vehicleCrewArr;
 	
 	_vehicle lock true;

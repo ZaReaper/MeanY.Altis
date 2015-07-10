@@ -26,7 +26,7 @@ if (_uid call isAdmin) then
 					"Access Respawn Dialog",
 					"Access Proving Grounds",
 					"Show Server FPS",
-					"Access News"
+					"Access NLU News"
 	];
 
 	{

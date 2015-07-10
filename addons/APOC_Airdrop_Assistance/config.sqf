@@ -2,7 +2,7 @@
 //Author: Apoc
 
 //APOC_AA_coolDownTime = 1; //Debug seconds
-APOC_AA_coolDownTime = 200; //Expressed in sec. 1800 = 30 minutes
+APOC_AA_coolDownTime = 120; //Expressed in sec. 1800 = 30 minutes
 
 APOC_AA_VehOptions =
 [ // ["Menu Text",		ItemClassname,				Price,	"Drop Type"]
@@ -24,6 +24,6 @@ APOC_AA_SupOptions =
 //["DLC LMGs", 			"airdrop_DLC_LMGs", 			35000, "supply"],
 
 //"Menu Text",			"Crate Type", 			"Cost", "drop type"
-//["Food",				"Land_Sacks_goods_F",	10000, 	"picnic"],
-//["Water",				"Land_BarrelWater_F",	10000, 	"picnic"]
+//["Food",				"Land_Sacks_goods_F",	5000, 	"picnic"],
+///["Water",				"Land_BarrelWater_F",	5000, 	"picnic"]
 ];

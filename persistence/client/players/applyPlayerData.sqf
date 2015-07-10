@@ -22,6 +22,7 @@ removeHeadgear player;
 	_name = _x select 0;
 	_value = _x select 1;
 
+	
 	switch (_name) do
 	{
 		case "Damage": { player setDamage _value };

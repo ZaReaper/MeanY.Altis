@@ -218,7 +218,7 @@
 		R3F_LOG_FNCT_transporteur_selectionner_objet = compile preprocessFile "addons\R3F_LOG\transporteur\selectionner_objet.sqf";
 		R3F_LOG_FNCT_transporteur_voir_contenu_vehicule = compile preprocessFile "addons\R3F_LOG\transporteur\voir_contenu_vehicule.sqf";
 		R3F_LOG_FNCT_transporteur_init = compile preprocessFile "addons\R3F_LOG\transporteur\transporteur_init.sqf";
-		//R3F_disallowedLocations = call compile preprocessFile "addons\R3F_LOG\objet_deplacable\disallowedLocations.sqf";
+		R3F_disallowedLocations = call compile preprocessFile "addons\R3F_LOG\objet_deplacable\disallowedLocations.sqf";
 		R3F_LOG_FNCT_objet_init = compile preprocessFile "addons\R3F_LOG\objet_commun\objet_init.sqf";
 		R3F_LOG_FNCT_objet_est_verrouille = compile preprocessFile "addons\R3F_LOG\objet_commun\objet_est_verrouille.sqf";
 		R3F_LOG_FNCT_deverrouiller_objet = compile preprocessFile "addons\R3F_LOG\objet_commun\deverrouiller_objet.sqf";

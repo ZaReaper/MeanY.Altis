@@ -71,7 +71,7 @@ while{groupManagmentActive} do
 		_groupLeaveButton ctrlShow false;
 	};
 
-	_allPlayers = call fn_allPlayers;
+	_allPlayers = call allPlayers;
 
 	//Sort Invite Controls
 	if(_hasInvite) then

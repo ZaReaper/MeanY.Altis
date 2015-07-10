@@ -42,7 +42,19 @@ while {true} do
 		R3F_LOG_objet_addAction = _objet_pointe;
 		
 		Object_canLock = !(_objet_pointe getVariable ['objectLocked', false]); // test
-		
+		Object_safePos = 
+		{
+				_obj = cursorTarget;
+				_maxDist = 100;
+				_allowed = true;
+				{
+					//diag_log format ["Checking %1 with coords %2. Distance: %3, max: %4",_obj,_x,_obj distance _x,_maxDist];
+					if ((_obj distance _x)<_maxDist) then {
+					_allowed=false;
+					};
+				} forEach R3F_disallowedLocations;
+			(_allowed);
+		};
 		_fonctionnalites = _objet_pointe getVariable ["R3F_LOG_fonctionnalites", R3F_LOG_CST_zero_log];
 		
 		_objet_pas_en_cours_de_deplacement = (isNull (_objet_pointe getVariable ["R3F_LOG_est_deplace_par", objNull]) ||

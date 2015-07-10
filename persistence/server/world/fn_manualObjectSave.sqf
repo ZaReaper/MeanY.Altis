@@ -15,17 +15,8 @@ if (diag_tickTime - (_obj getVariable ["objSaving_lastSave", 0]) > MANUAL_OBJ_SA
 {
 	if (_obj call fn_isObjectSaveable && call A3W_savingMethod == "extDB") then
 	{
-		_obj allowDamage false;
-		[_obj, nil, true] spawn
-		{
-			_objID = _this call fn_saveObject;
-
-			if (!isNil "_objID" && {isServer && !isNil "A3W_hcObjSaving_unit" && {!isNull A3W_hcObjSaving_unit}}) then
-			{
-				A3W_hcObjSaving_trackObjID = _objID;
-				(owner A3W_hcObjSaving_unit) publicVariableClient "A3W_hcObjSaving_trackObjID";
-			};
-		};
+	_obj allowDamage false;
+		[_obj, nil, true] spawn fn_saveObject;
 	};
 
 	_obj setVariable ["objSaving_lastSave", diag_tickTime];

@@ -115,7 +115,8 @@ camera_keyUpHandler = {
     _key in (actionKeys "MoveBack") ||
     _key in (actionKeys "TurnLeft") ||
     _key in (actionKeys "TurnRight") ||
-    _key in [DIK_Q, DIK_Z]) &&
+    _key in (actionKeys "HeliUp") ||
+    _key in (actionKeys "HeliDown")) &&
     (count(camera_key_tracker) == 0)) then {
     [_player,0] call camera_set_velocity;
   };
@@ -1227,7 +1228,8 @@ camera_update_key_tracker = {
     _key in (actionKeys "MoveBack") ||
     _key in (actionKeys "TurnLeft") ||
     _key in (actionKeys "TurnRight") ||
-    _key in [DIK_Q, DIK_Z])) exitWith {};
+    _key in (actionKeys "HeliUp") ||
+    _key in (actionKeys "HeliDown"))) exitWith {};
 
   if (_down && {(camera_key_tracker find _key) == -1}) then {
     camera_key_tracker set [count(camera_key_tracker),_key];

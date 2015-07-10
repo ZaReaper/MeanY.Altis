@@ -38,7 +38,7 @@ playerSetupComplete = false;
 waitUntil {!isNull player};
 waitUntil {time > 0.1};
 
-//enableEnvironment false; // Temporary fix for client side FPS problems. Disables all wildlife and environment sounds
+// enableEnvironment false; // Temporary fix for client side FPS problems. Disables all wildlife and environment sounds
 
 removeAllWeapons player;
 player switchMove "";
@@ -64,7 +64,7 @@ player addEventHandler ["Killed", { _this spawn onKilled }];
 
 A3W_scriptThreads pushBack execVM "client\functions\evalManagedActions.sqf";
 
-pvar_playerRespawn = [player, objNull];
+pvar_playerRespawn = player;
 publicVariableServer "pvar_playerRespawn";
 
 //Player setup
@@ -125,11 +125,7 @@ call compile preprocessFileLineNumbers "client\functions\setupClientPVars.sqf";
 
 //client Executes
 A3W_scriptThreads pushBack execVM "client\systems\hud\playerHud.sqf";
-
-if (["A3W_survivalSystem"] call isConfigOn) then
-{
-	execVM "client\functions\initSurvival.sqf";
-};
+[] execVM "client\functions\initSurvival.sqf";
 
 [] spawn
 {
@@ -152,7 +148,7 @@ A3W_scriptThreads pushBack execVM "addons\Lootspawner\LSclientScan.sqf";
 call compile preprocessFileLineNumbers "client\functions\generateAtmArray.sqf";
 [] execVM "client\functions\drawPlayerMarkers.sqf";
 
-// update player's spawn beaoon
+// update player's spawn beacon
 {
 	if (_x getVariable ["ownerUID",""] == getPlayerUID player) then
 	{
@@ -161,8 +157,6 @@ call compile preprocessFileLineNumbers "client\functions\generateAtmArray.sqf";
 	};
 } forEach pvar_spawn_beacons;
 
-{ _x call A3W_fnc_setupAntiExplode } forEach allMissionObjects "LandVehicle";
-{ _x call A3W_fnc_setupAntiExplode } forEach allMissionObjects "Ship";
 { _x call A3W_fnc_setupAntiExplode } forEach allMissionObjects "Air";
 { _x call A3W_fnc_setupAntiExplode } forEach allMissionObjects "UGV_01_base_F";
 

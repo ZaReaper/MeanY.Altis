@@ -22,32 +22,47 @@ if (!isNil "_uid") then
 
 			switch (lbCurSel _BoS_select) do
 			{
-				case 0: //Mark Owned Object
+				case 0: //Re Lock Objects
+				{
+					closeDialog 0;
+					execVM "addons\BoS\BoS_reLock.sqf";
+				};
+				case 1: //Mark Owned Object
 				{
 					closeDialog 0;
 					execVM "addons\BoS\BoS_markOwned.sqf";
 				};
-				case 1: //Show Base Border
+				case 2: //Show Base Border
 				{
 					closeDialog 0;
 					execVM "addons\BoS\BoS_showBorder.sqf";
 				};
-				case 2: //Repair Base Locker
+				case 3: //Repair Base Locker
 				{
 					closeDialog 0;
 					execVM "addons\BoS\BoS_repairLocker.sqf";
 				};
-				case 3: //Lock Down Base
+				case 4: //Turn off all lights
+				{
+					closeDialog 0;
+					execVM "addons\BoS\BoS_lightsOff.sqf";;
+				};
+				case 5: //Turn on all lighs
+				{
+					closeDialog 0;
+					execVM "addons\BoS\BoS_lightsOn.sqf";
+				};
+				case 6: //Lock Down Base
 				{
 					closeDialog 0;					
 					execVM "addons\BoS\BoS_lockDown.sqf";
 				};
-				case 4: //Release Lock Down
+				case 7: //Release Lock Down
 				{
 					closeDialog 0;					
 					execVM "addons\BoS\BoS_releaseLockDown.sqf";
 				};
-				case 5: //Change Password
+				case 8: //Change Password
 				{
 					closeDialog 0;					
 					execVM "addons\Bos\password_change.sqf";

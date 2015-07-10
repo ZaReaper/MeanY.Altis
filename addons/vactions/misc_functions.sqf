@@ -13,7 +13,7 @@ A3W_fnc_unflip = {
   def(_pos);
   _object allowDamage false;
   _pos = getPos _object;
-  _pos set [2, (_pos select 2) + 1.5];
+  _pos set [2, (_pos select 2) + 3.5];
   _object setPos _pos;
   _object setVectorUp _vector;
   [_object] spawn {
@@ -92,5 +92,3 @@ str_truncate = {
 va_misc_functions_loaded = true;
 
 diag_log format["Loading vehicle misc functions complete"];
-
-

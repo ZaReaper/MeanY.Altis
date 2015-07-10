@@ -13,7 +13,7 @@
 #define ERR_IN_VEHICLE "Action Failed! You can't do this in a vehicle"
 #define ERR_DONATOR "Action Failed! You are not allowed to place a beacon near this base"
 #define MAX_BEACONS format ["You cannot deploy more then %1 spawnbeacons", [_MaxSpawnbeacons]]
-_MaxSpawnbeacons = ceil (["A3W_maxSpawnBeacons", 5] call getPublicVar);
+_MaxSpawnbeacons = ceil (["A3W_maxSpawnBeacons", 6] call getPublicVar);
 
 private ["_hasFailed", "_success","_pos","_uid","_beacon","_IsProtected","_IsAllowed","_beacons","_ownedBeacons"];
 
@@ -35,7 +35,7 @@ _hasFailed = {
 		case (!alive player): {};
 		case (doCancelAction) :{doCancelAction = false; _text = ERR_CANCELLED;};
 		case (vehicle player != player): {_text = ERR_IN_VEHICLE};
-		case (_ownedBeacons >= _MaxSpawnbeacons): {_text = MAX_BEACONS; player spawn deleteBeacon};
+		case (_ownedBeacons >= _MaxSpawnbeacons): {_text = MAX_BEACONS};
 		default {
 			_text = format["Spawn Beacon %1%2 Deployed", round(_progress*100), "%"];
 			_failed = false;

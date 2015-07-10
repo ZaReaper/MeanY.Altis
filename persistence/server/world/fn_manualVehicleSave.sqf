@@ -13,20 +13,11 @@ if (typeName _veh == "STRING") then { _veh = objectFromNetId _veh };
 
 if (diag_tickTime - (_veh getVariable ["vehSaving_lastSave", 0]) > MANUAL_VEH_SAVE_COOLDOWN) then
 {
-	[_veh, "vehSaving_lastUse"] call fn_setTickTime;
+	_veh setVariable ["vehSaving_lastUse", diag_tickTime];
 
 	if (_veh call fn_isVehicleSaveable && call A3W_savingMethod == "extDB") then
 	{
-		[_veh] spawn
-		{
-			_vehID = _this call fn_saveVehicle;
-
-			if (!isNil "_vehID" && {isServer && !isNil "A3W_hcObjSaving_unit" && {!isNull A3W_hcObjSaving_unit}}) then
-			{
-				A3W_hcObjSaving_trackVehID = _vehID;
-				(owner A3W_hcObjSaving_unit) publicVariableClient "A3W_hcObjSaving_trackVehID";
-			};
-		};
+		[_veh] spawn fn_saveVehicle;
 	};
 
 	_veh setVariable ["vehSaving_lastSave", diag_tickTime];

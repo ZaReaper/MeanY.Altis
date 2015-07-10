@@ -9,7 +9,7 @@
 
 //Creates the markers around general stores.
 {
-	if (!isPlayer _x && {(vehicleVarName _x) select [0,8] == "GenStore"}) then
+	if (!isPlayer _x && {["GenStore", vehicleVarName _x] call fn_startsWith}) then
 	{
 		_npcPos = getPosATL _x;
 
@@ -23,4 +23,11 @@
 		_markerName setMarkerSizeLocal [1,1];
 		_markerName setMarkerTextLocal "General Store";
 	};
+	if (!isPlayer _x && {["GenStore6", name _x] call fn_startsWith}) then
+	{
+		_npcPos = getPos _x;
+		_markerName = format["marker_shop_title_%1",_x];
+		deleteMarkerLocal _markerName;
+	};
 } forEach entities "CAManBase";
+

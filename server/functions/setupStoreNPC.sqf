@@ -56,11 +56,10 @@ if (hasInterface) then
 
 if (isServer) then
 {
-	// nearestBuilding no longer detects barracks since A3 v1.42, so we need this shitty workaround
-	_building = (_npc modelToWorld [0,0,0]) nearestObject "House";
-	if !(_building isKindOf "Land_i_Barracks_V1_F") then { _building = nearestBuilding _npc };
-
-	_npc setVariable ["storeNPC_nearestBuilding", netId _building, true];
+    _building = (_npc modelToWorld [0,0,0]) nearestObject "House"; // nearestBuilding _npc; has been acting weird since A3 v1.42
+if !(_building isKindOf "Land_i_Barracks_V1_F") then { _building = nearestBuilding _npc };
+	
+_npc setVariable ["storeNPC_nearestBuilding", netId _building, true];
 
 	_facesCfg = configFile >> "CfgFaces" >> "Man_A3";
 	_faces = [];
@@ -99,7 +98,7 @@ else
 
 if (isNil "_building" || {isNull _building}) then
 {
-	_building = (_npc modelToWorld [0,0,0]) nearestObject "House";
+	_building = (_npc modelToWorld [0,0,0]) nearestObject "House"; // nearestBuilding _npc;
 	if !(_building isKindOf "Land_i_Barracks_V1_F") then { _building = nearestBuilding _npc };
 
 
