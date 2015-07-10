@@ -47,8 +47,12 @@ _setupObjects =
 		_soldier moveInCommander _vehicle;
 		_soldier = [_aiGroup, _position] call createRandomSoldier; 
 		_soldier moveInGunner _vehicle;
-		_vehicle setVehicleLock "UNLOCKED";  // force vehicles to be unlocked
-		_vehicle setVariable ["R3F_LOG_disabled", false, true]; // force vehicles to be unlocked
+
+		//_vehicle setVehicleLock "UNLOCKED";  // force vehicles to be unlocked
+		//_vehicle setVariable ["R3F_LOG_disabled", false, true]; // force vehicles to be unlocked
+		_vehicle setVariable ["R3F_LOG_disabled", true, true]; // force vehicles to be locked
+		[_vehicle, _aiGroup] spawn checkMissionVehicleLock; // force vehicles to be locked
+
 		_vehicle
 	};
 

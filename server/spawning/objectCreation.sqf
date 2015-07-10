@@ -6,10 +6,11 @@
 
 if (!isServer) exitWith {};
 
-private ["_objPos", "_objClass", "_obj", "_adjustZ", "_pos"];
+private ["_objPos", "_objList", "_objClass", "_obj", "_adjustZ", "_pos"];
 _objPos = _this select 0;
+_objList = _this select 1;
 
-_objClass = objectList call BIS_fnc_selectRandom;
+_objClass = _objList call BIS_fnc_selectRandom;
 _obj = createVehicle [_objClass, _objPos, [], 50, "None"];
 _obj setVariable ["R3F_LOG_disabled",false,true];
 
@@ -39,11 +40,12 @@ switch (true) do
 		_obj addItemCargoGlobal ["ItemGPS", 5];
 		_obj addItemCargoGlobal ["Medikit", 4];
 		_obj addItemCargoGlobal ["ToolKit", 2];
+
 		_obj allowDamage false;
 	};
 	default
 	{
-		_obj setVariable ["allowDamage", false]; //disable base item dmg * MeanY
+		_obj setVariable ["allowDamage", true];
 	};
 };
 

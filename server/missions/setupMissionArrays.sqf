@@ -72,6 +72,7 @@ ExtraMissions = [ExtraMissions, [["A3W_heliPatrolMissions", ["mission_HostileJet
 MissionSpawnMarkers = [];
 SunkenMissionMarkers = [];
 RoadblockMissionMarkers =[];
+SniperMissionMarkers =[];
 {
 	switch (true) do
 	{
@@ -86,6 +87,10 @@ RoadblockMissionMarkers =[];
 		case (["RoadBlock_", _x] call fn_startsWith):
 		{
 			RoadblockMissionMarkers pushBack [_x, false];
+		};
+		case (["Sniper_", _x] call fn_startsWith):
+		{
+			SniperMissionMarkers pushBack [_x, false];
 		};
 	};
 } forEach allMapMarkers;
