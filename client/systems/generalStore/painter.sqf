@@ -30,46 +30,46 @@ if (_price < _playerMoney) then
 	};
 
 if (_paint == 2) then {
-player setObjectTextureGlobal  [0, _texDir+"unionjack.jpg"]; backpackContainer player setObjectTextureGlobal  [0, _texDir+"unionjack.jpg"];
+player setObjectTextureGlobal  [0, _texDir+"unionjack.paa"]; backpackContainer player setObjectTextureGlobal  [0, _texDir+"unionjack.paa"];
 };
 
 if (_paint == 3) then {
-player setObjectTextureGlobal  [0, _texDir+"skulls.jpg"]; backpackContainer player setObjectTextureGlobal  [0, _texDir+"skulls.jpg"];
+player setObjectTextureGlobal  [0, _texDir+"skulls.paa"]; backpackContainer player setObjectTextureGlobal  [0, _texDir+"skulls.paa"];
 };
 
 if (_paint == 4) then {
-player setObjectTextureGlobal  [0, _texDir+"camo_fuel.jpg"]; backpackContainer player setObjectTextureGlobal  [0, _texDir+"camo_fuel.jpg"];
+player setObjectTextureGlobal  [0, _texDir+"camo_fuel.paa"]; backpackContainer player setObjectTextureGlobal  [0, _texDir+"camo_fuel.paa"];
 };
 
 if (_paint == 5) then {
-player setObjectTextureGlobal  [0, _texDir+"camo_fack.jpg"]; backpackContainer player setObjectTextureGlobal  [0, _texDir+"camo_fack.jpg"];
+player setObjectTextureGlobal  [0, _texDir+"camo_fack.paa"]; backpackContainer player setObjectTextureGlobal  [0, _texDir+"camo_fack.paa"];
 };
 
 if (_paint == 6) then {
-player setObjectTextureGlobal  [0, _texDir+"redcamo.jpg"]; backpackContainer player setObjectTextureGlobal  [0, _texDir+"redcamo.jpg"];
+player setObjectTextureGlobal  [0, _texDir+"redcamo.paa"]; backpackContainer player setObjectTextureGlobal  [0, _texDir+"redcamo.paa"];
 };
 
 if (_paint == 7) then {
-player setObjectTextureGlobal  [0, _texDir+"camo_pank.jpg"]; backpackContainer player setObjectTextureGlobal  [0, _texDir+"camo_pank.jpg"];
+player setObjectTextureGlobal  [0, _texDir+"camo_pank.paa"]; backpackContainer player setObjectTextureGlobal  [0, _texDir+"camo_pank.paa"];
 };
 
 if (_paint == 8) then {
-player setObjectTextureGlobal  [0, _texDir+"dmr.jpg"]; backpackContainer player setObjectTextureGlobal  [0, _texDir+"dmr.jpg"];
+player setObjectTextureGlobal  [0, _texDir+"dmr.paa"]; backpackContainer player setObjectTextureGlobal  [0, _texDir+"dmr.paa"];
 };
 
 if (_paint == 9) then {
-player setObjectTextureGlobal  [0, _texDir+"icecamo.jpg"]; backpackContainer player setObjectTextureGlobal  [0, _texDir+"icecamo.jpg"];
+player setObjectTextureGlobal  [0, _texDir+"icecamo.paa"]; backpackContainer player setObjectTextureGlobal  [0, _texDir+"icecamo.paa"];
 };
 
 if (_paint == 10) then {
-player setObjectTextureGlobal  [0, _texDir+"digicam.jpg"]; backpackContainer player setObjectTextureGlobal  [0, _texDir+"digicam.jpg"];
+player setObjectTextureGlobal  [0, _texDir+"digicam.paa"]; backpackContainer player setObjectTextureGlobal  [0, _texDir+"digicam.paa"];
 };
 
 if (_paint == 11) then {
-player setObjectTextureGlobal  [0, _texDir+"snake.jpg"]; backpackContainer player setObjectTextureGlobal  [0, _texDir+"snake.jpg"];
+player setObjectTextureGlobal  [0, _texDir+"snake.paa"]; backpackContainer player setObjectTextureGlobal  [0, _texDir+"snake.paa"];
 };
 
 if (_paint == 12) then {
-player setObjectTextureGlobal  [0, _texDir+"clothcamo.jpg"]; backpackContainer player setObjectTextureGlobal  [0, _texDir+"clothcamo.jpg"];
+player setObjectTextureGlobal  [0, _texDir+"clothcamo.paa"]; backpackContainer player setObjectTextureGlobal  [0, _texDir+"clothcamo.paa"];
 };
 

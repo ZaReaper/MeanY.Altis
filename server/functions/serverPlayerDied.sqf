@@ -82,12 +82,10 @@ if !(["G_Diving", goggles _unit] call fn_startsWith) then { removeGoggles _unit 
 // Make NPCs drop Cash
 if (!isPlayer _unit) then
 {
-			_itemtype = ["Item","Land_Money_F"];
-			_item = createVehicle [_itemtype select 1, getpos _unit, [], 5, "None"];
-			_item setPos ([getPos _unit, 1, 3, 0, 0, 2000, 0] call BIS_fnc_findSafePos);
-			_item setDir random 360;
-			_cash = random 2500;
-			_item setVariable ["cmoney", _cash , true];
-			_item setVariable ["owner", "world", true];
+	_Drop = ["A3W_aidropcash", 900] call getPublicVar;
+	_item = createVehicle ["Land_Money_F", getPosATL _unit, [], 1, "None"];
+	_item setDir random 360;
+	_item setVariable ["cmoney", 1 + floor random _Drop, true];
+	_item setVariable ["owner", "world", true];
 
 };

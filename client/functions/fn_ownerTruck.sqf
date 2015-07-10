@@ -4,7 +4,7 @@
 //	@file Name: fn_sellTruck.sqf
 //	@file Author: Gigatek, Wiking, Lodac, Cael817, LouD
 
-#define CHANGEOWNER_VEHICLE_DISTANCE 20
+#define CHANGEOWNER_VEHICLE_DISTANCE 30
 #define CHANGEOWNER_PRICE_RELATIONSHIP 2
 
 // Check if mutex lock is active.
@@ -21,13 +21,6 @@ _vehicle = vehicle _unit;
 
 //check if caller is the driver
 if (_unit != driver _vehicle) exitWith
-{
-	["You must be in the driver seat to change ownership.", 5] call mf_notify_client;
-	mutexScriptInProgress = false;
-};
-
-//check if caller is not in vehicle
-if (_vehicle == _unit) exitWith
 {
 	["You must be in the driver seat to change ownership.", 5] call mf_notify_client;
 	mutexScriptInProgress = false;

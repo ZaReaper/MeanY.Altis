@@ -19,7 +19,7 @@ _trueName = [];
 {
 	if (_name == _x) exitWith
 	{
-		[format ['The name "%1" is not allowed, please change it or you will be kicked/banned.', name player], "Notice"] spawn BIS_fnc_guiMessage;
+		[format ['The name "%1" is not allowed, please change it or you may get kicked.', name player], "Notice"] spawn BIS_fnc_guiMessage;
 	}
 } forEach _bannedNames;
 

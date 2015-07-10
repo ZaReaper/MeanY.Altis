@@ -163,7 +163,7 @@ class playerSettings {
 		class btnDistanceNear : w_RscButton {
 			idc = -1;
 			text = "Near";
-			onButtonClick = "setViewDistance 1900;";
+			onButtonClick = "setViewDistance 1500;";
 			x = 0.02; y = 0.43;
 			w = 0.125; h = 0.033 * safezoneH;
 		};
@@ -171,7 +171,7 @@ class playerSettings {
 		class btnDistanceMedium : w_RscButton {
 			idc = -1;
 			text = "Medium";
-			onButtonClick = "setViewDistance 3300;";
+			onButtonClick = "setViewDistance 3000;";
 			x = 0.02; y = 0.5;
 			w = 0.125; h = 0.033 * safezoneH;
 		};
@@ -179,26 +179,19 @@ class playerSettings {
 		class btnDistanceFar : w_RscButton {
 			idc = -1;
 			text = "Far";
-			onButtonClick = "setViewDistance 4500;";
+			onButtonClick = "setViewDistance 4000;";
 			x = 0.02; y = 0.57;
 			w = 0.125; h = 0.033 * safezoneH;
 		};
 		
-	//	class btnDistanceCustom : w_RscButton {
-	//		idc = -1;
-	//		text = "Custom";
-	//		onButtonClick = "[] execVM 'addons\taw_vd\fn_openTAWVD.sqf'";
-	//		x = 0.158; y = 0.57;
-	//		w = 0.125; h = 0.033 * safezoneH;
-	//	};
-	//
-		class btnDistanceEffects : w_RscButton {
+		/*class btnDistanceCustom : w_RscButton {
 			idc = -1;
-			text = "Effects";
-			onButtonClick = "[] execVM 'addons\disableEnvironment\disableEnvironment.sqf'";
-			x = 0.158; y = 0.5;
+			text = "Custom";
+			onButtonClick = "[] execVM 'addons\taw_vd\fn_openTAWVD.sqf'";
+			x = 0.158; y = 0.57;
 			w = 0.125; h = 0.033 * safezoneH;
-		};
+		};*/ // Disable viewdistance button for now
+
 		
 				class TOParmaInfoButton : w_RscButton {
 			idc = -1;

@@ -6,7 +6,7 @@
 //@file Author: LouD/Apoc
 //@file Description: Delete a Spawn Beacon
 
-_MaxSpawnbeacons = ceil (["A3W_maxSpawnBeacons", 6] call getPublicVar);
+_MaxSpawnbeacons = ceil (["A3W_maxSpawnBeacons", 5] call getPublicVar);
 #define MAX_BEACONS format ["You cannot deploy more then %1 spawnbeacons.", [_MaxSpawnbeacons]]
 _confirmMsg = MAX_BEACONS + format ["<br/>Press delete to remove a random spawnbeacon."];
 

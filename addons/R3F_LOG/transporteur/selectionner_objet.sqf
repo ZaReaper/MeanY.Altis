@@ -34,7 +34,7 @@ private ["_objet","_ProtectedPlayers","_IsProtected"];
 	};
 //End donator part
 
-	if (((_objet distance getMarkerPos  "_BluBaseMarker") < 100) && !(side player == blufor)) exitwith {
+	if (((_objet distance getMarkerPos "_BluBaseMarker") < 100) && !(side player == blufor)) exitwith {
 		hint "This base can only be changed by Blufor"; R3F_LOG_mutex_local_verrou = false;
 	};
 

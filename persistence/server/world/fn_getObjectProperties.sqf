@@ -30,13 +30,6 @@ switch (true) do
 	};
 };
 
-_owner = _obj getVariable ["ownerUID", ""];
-
-if (_owner != "") then
-{
-	_variables pushBack ["ownerUID", _owner];
-};
-
 switch (true) do
 {
 	case (_obj call _isBox):
@@ -69,6 +62,8 @@ switch (true) do
 	};
 	
 };
+
+_owner = _obj getVariable ["ownerUID", ""];
 
 _r3fSide = _obj getVariable "R3F_Side";
 
@@ -126,8 +121,9 @@ if (isNil "_repairCargo" || {!finite _repairCargo}) then { _repairCargo = 0 };
 	["Class", _class],
 	["Position", _pos],
 	["Direction", _dir],
-	["Damage", _damage], //MeanY
-	["AllowDamage", _allowDamage], //MeanY
+	["Damage", _damage],
+	["AllowDamage", _allowDamage],
+	["OwnerUID", _owner],
 	["Variables", _variables],
 
 	["Weapons", _weapons],

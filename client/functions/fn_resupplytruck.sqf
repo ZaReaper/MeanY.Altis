@@ -21,13 +21,13 @@ _truck = _this select 0;
 _unit = _this select 1;
 _vehicle = vehicle _unit;
 
-//check if caller is in vehicle
 //check if caller is the driver
 if ((_unit != driver _vehicle) && !(_vehicle isKindOf "StaticWeapon")) exitWith
 {
 	["You must be in the driver seat to resupply the vehicle.", 5] call mf_notify_client;
 	mutexScriptInProgress = false;
 };
+
 
 //check if caller is not in vehicle
 if ((_vehicle == _unit) && !(_vehicle isKindOf "StaticWeapon")) exitWith
@@ -55,7 +55,7 @@ if (_eng) exitWith {
 	titleText ["Engine still running. Service CANCELED!", "PLAIN DOWN", 0.5];
 	mutexScriptInProgress = false;
 };
-	
+/*
 if ((!isnull (gunner _vehicle)) && !(_vehicle isKindOf "StaticWeapon") && !(_vehicle isKindOf "UAV_01_base_F") && !(_vehicle isKindOf "UAV_02_base_F") && !(_vehicle isKindOf "UGV_01_base_F")) then {
 	_vehicle vehicleChat format ["Gunner must be out of seat for service! Get gunner out in 20s."];
 	sleep 10;
@@ -67,6 +67,7 @@ if ((!isnull (gunner _vehicle)) && !(_vehicle isKindOf "StaticWeapon") && !(_veh
 		mutexScriptInProgress = false;
 	};
 };
+*/
 _resupplyThread = _vehicle spawn
 {
 	_vehicle = _this;
