@@ -10,7 +10,7 @@ if(R3F_LOG_mutex_local_verrou) exitWith {
 	player globalChat STR_R3F_LOG_mutex_action_en_cours;
 };
 
-private["_locking", "_object", "_lockState", "_lockDuration", "_stringEscapePercent", "_iteration", "_unlockDuration", "_totalDuration", "_checks", "_success","_IsProtected","_IsAllowed"];
+private["_locking", "_object", "_lockState", "_lockDuration", "_stringEscapePercent", "_iteration", "_unlockDuration", "_totalDuration", "_poiDist", "_poiMarkers", "_checks", "_success","_IsProtected","_IsAllowed"];
 
 _object = _this select 0;
 _lockState = _this select 3;
@@ -34,8 +34,12 @@ if ((_IsProtected) && !(_IsAllowed)) exitwith {
 };
 //End donator part
 
-if (((_object distance getMarkerPos  "_BluBaseMarker") < 100) && !(side player == blufor)) exitwith {
+if (((_object distance getMarkerPos "_BluBaseMarker") < 100) && !(side player == blufor)) exitwith {
 	hint "This base can only be changed by Blufor"; R3F_LOG_mutex_local_verrou = false;
+};
+
+if (((_object distance getMarkerPos "_OPFBaseMarker") < 100) && !(side player == opfor)) exitwith {
+	hint "This base can only be changed by Opfor"; R3F_LOG_mutex_local_verrou = false;
 };
 
 _totalDuration = 0;
@@ -49,6 +53,24 @@ switch (_lockState) do
 		_totalDuration = 5;
 		//_lockDuration = _totalDuration;
 		//_iteration = 0;
+
+		// Points of interest
+		_poiDist = ["A3W_poiObjLockDistance", 100] call getPublicVar;
+		_poiMarkers = [];
+
+		{
+			if (getMarkerType _x == "Empty" && {(toLower (_x select [0,8])) in ["genstore","gunstore","vehstore","mission_"]}) then
+			{
+				_poiMarkers pushBack _x;
+			};
+		} forEach allMapMarkers;
+
+		if ({(getPosASL player) vectorDistance (ATLtoASL getMarkerPos _x) < _poiDist} count _poiMarkers > 0) exitWith
+		{
+			playSound "FD_CP_Not_Clear_F";
+			[format ["You are not allowed to lock objects within %1m of stores and mission spawns", _poiDist], 5] call mf_notify_client;
+			R3F_LOG_mutex_local_verrou = false;
+		};
 
 		_checks =
 		{
@@ -98,6 +120,7 @@ switch (_lockState) do
 		R3F_LOG_mutex_local_verrou = false;
 
 		/*player switchMove "AinvPknlMstpSlayWrflDnon_medic";
+
 		for "_iteration" from 1 to _lockDuration do
 		{
 			// If the player is too far or dies, revert state.
@@ -106,14 +129,18 @@ switch (_lockState) do
 		        2 cutText ["Object lock interrupted...", "PLAIN DOWN", 1];
 				R3F_LOG_mutex_local_verrou = false;
 			};
+
 			// Keep the player locked in medic animation for the full duration of the unlock.
 			if (animationState player != "AinvPknlMstpSlayWrflDnon_medic") then {
 				player switchMove "AinvPknlMstpSlayWrflDnon_medic";
 			};
+
 			_lockDuration = _lockDuration - 1;
 		    _iterationPercentage = floor (_iteration / _totalDuration * 100);
+
 			2 cutText [format["Object lock %1%2 complete", _iterationPercentage, _stringEscapePercent], "PLAIN DOWN", 1];
 		    sleep 1;
+
 			// Sleep a little extra to show that lock has completed.
 			if (_iteration >= _totalDuration) exitWith
 			{
@@ -124,12 +151,13 @@ switch (_lockState) do
 				R3F_LOG_mutex_local_verrou = false;
 		    };
 		};
+
 		player switchMove ""; */ // Redundant reset of animation state to avoid getting locked in animation.
 	};
 	case 1: // UNLOCK
 	{
 		R3F_LOG_mutex_local_verrou = true;
-		_totalDuration = if (_object getVariable ["ownerUID", ""] == getPlayerUID player) then { 5 } else { 960 }; // Allow owner to unlock quickly
+		_totalDuration = if (_object getVariable ["ownerUID", ""] == getPlayerUID player) then { 10 } else { 850 }; // Allow owner to unlock quickly
 		//_unlockDuration = _totalDuration;
 		//_iteration = 0;
 
@@ -190,14 +218,18 @@ switch (_lockState) do
 		        2 cutText ["Object unlock interrupted...", "PLAIN DOWN", 1];
 				R3F_LOG_mutex_local_verrou = false;
 			};
+
 			// Keep the player locked in medic animation for the full duration of the unlock.
 			if (animationState player != "AinvPknlMstpSlayWrflDnon_medic") then {
 				player switchMove "AinvPknlMstpSlayWrflDnon_medic";
 			};
+
 			_unlockDuration = _unlockDuration - 1;
 		    _iterationPercentage = floor (_iteration / _totalDuration * 100);
+
 			2 cutText [format["Object unlock %1%2 complete", _iterationPercentage, _stringEscapePercent], "PLAIN DOWN", 1];
 		    sleep 1;
+
 			// Sleep a little extra to show that lock has completed
 			if (_iteration >= _totalDuration) exitWith
 			{
@@ -210,6 +242,7 @@ switch (_lockState) do
 				R3F_LOG_mutex_local_verrou = false;
 		    };
 		};
+
 		player switchMove ""; */ // Redundant reset of animation state to avoid getting locked in animation.
 	};
 	default // This should not happen...
