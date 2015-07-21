@@ -49,7 +49,7 @@ else
 		hint format["This object belongs to %1 and they're nearby you cannot take this.", _objet getVariable "R3F_Side"]; R3F_LOG_mutex_local_verrou = false;
 	};
 	
-	//Start donator part
+	/* //Start donator part
 	_IsProtected = false;
 	_IsAllowed = false;
 	
@@ -71,7 +71,7 @@ else
 	if (((_objet distance getMarkerPos "_BluBaseMarker") < 100) && !(side player == blufor)) exitwith {
 		hint "This base can only be changed by Blufor"; R3F_LOG_mutex_local_verrou = false;
 	};
-	
+	*/
 	_objet setVariable ["R3F_Side", (playerSide), true];
 	
 	if (isNull (_objet getVariable ["R3F_LOG_est_transporte_par", objNull]) && (isNull (_objet getVariable ["R3F_LOG_est_deplace_par", objNull]) || (!alive (_objet getVariable ["R3F_LOG_est_deplace_par", objNull])) || (!isPlayer (_objet getVariable ["R3F_LOG_est_deplace_par", objNull])))) then

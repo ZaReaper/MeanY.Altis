@@ -110,8 +110,7 @@ if (isServer) then
 		"A3W_teamPlayersMap",
 		"A3W_remoteBombStoreRadius",
 		"A3W_vehiclePurchaseCooldown",
-		"A3W_globalVoiceWarnTimer",
-		"A3W_globalVoiceMaxWarns",
+		"A3W_disableGlobalVoice",
 		"A3W_antiHackMinRecoil",
 		"A3W_spawnBeaconCooldown",
 		"A3W_spawnBeaconSpawnHeight",
@@ -149,14 +148,13 @@ _staticWeaponSavingOn = ["A3W_staticWeaponSaving"] call isConfigOn;
 _warchestSavingOn = ["A3W_warchestSaving"] call isConfigOn;
 _warchestMoneySavingOn = ["A3W_warchestMoneySaving"] call isConfigOn;
 _beaconSavingOn = ["A3W_spawnBeaconSaving"] call isConfigOn;
-_cameraSavingOn = ["A3W_cctvCameraSaving"] call isConfigOn;
 _timeSavingOn = ["A3W_timeSaving"] call isConfigOn;
 _weatherSavingOn = ["A3W_weatherSaving"] call isConfigOn;
 
 _purchasedVehicleSavingOn = ["A3W_purchasedVehicleSaving"] call isConfigOn;
 _missionVehicleSavingOn = ["A3W_missionVehicleSaving"] call isConfigOn;
 
-_objectSavingOn = (_baseSavingOn || _boxSavingOn || _staticWeaponSavingOn || _cameraSavingOn || _warchestSavingOn || _warchestMoneySavingOn || _beaconSavingOn);
+_objectSavingOn = (_baseSavingOn || _boxSavingOn || _staticWeaponSavingOn || _warchestSavingOn || _warchestMoneySavingOn || _beaconSavingOn);
 _vehicleSavingOn = (_purchasedVehicleSavingOn || _purchasedVehicleSavingOn);
 _hcObjSavingOn = ["A3W_hcObjSaving"] call isConfigOn;
 
@@ -398,7 +396,6 @@ if (_playerSavingOn || _objectSavingOn || _vehicleSavingOn || _timeSavingOn || _
 			["warchestMoneySaving", _warchestMoneySavingOn],
 			["spawnBeaconSaving", _beaconSavingOn],
 			["timeSaving", _timeSavingOn],
-			["cctvCameraSaving", _cameraSavingOn],
 			["weatherSaving", _weatherSavingOn],
 			["hcObjSaving", _hcObjSavingOn]
 		];
@@ -518,7 +515,5 @@ if (["A3W_serverMissions"] call isConfigOn) then
 	[] execVM "server\missions\masterController.sqf";
 };
 
-//Load EOS
-[] execVM "eos\OpenMe.sqf";  //EOS SYSTEM
 // Start clean-up loop
 [] execVM "server\WastelandServClean.sqf";

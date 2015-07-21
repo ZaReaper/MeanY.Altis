@@ -17,7 +17,7 @@ _lockState = _this select 3;
 
 _IsProtected = false;
 _IsAllowed = false;
-
+/*
 //Start donator part
 {
 	if(((_object distance getMarkerPos  (_x select 3)) <  (_x select 1))) then
@@ -33,7 +33,7 @@ if ((_IsProtected) && !(_IsAllowed)) exitwith {
 	hint "This base is protected by donator status"; R3F_LOG_mutex_local_verrou = false;
 };
 //End donator part
-
+*/
 if (((_object distance getMarkerPos "_BluBaseMarker") < 100) && !(side player == blufor)) exitwith {
 	hint "This base can only be changed by Blufor"; R3F_LOG_mutex_local_verrou = false;
 };

@@ -101,8 +101,6 @@ if (isNil "_building" || {isNull _building}) then
 {
 	_building = (_npc modelToWorld [0,0,0]) nearestObject "House";
 	if !(_building isKindOf "Land_i_Barracks_V1_F") then { _building = nearestBuilding _npc };
-
-
 };
 
 _building allowDamage true;

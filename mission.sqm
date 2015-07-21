@@ -110,8 +110,10 @@ class Mission
 	};
 	addOnsAuto[]=
 	{
-		"A3_Characters_F_INDEP",
+		"A3_Characters_F_BLUFOR",
 		"a3_characters_f",
+		"A3_Characters_F_OPFOR",
+		"A3_Characters_F_INDEP",
 		"A3_Characters_F_Civil",
 		"A3_Modules_F",
 		"A3_Structures_F_Households_House_Big01",

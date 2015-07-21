@@ -104,6 +104,10 @@ if(playerSide == BLUFOR) then
 
 client_firstSpawn = true;
 
+//setViewDistance 2200;
+//setObjectViewDistance 1600;
+
+
 //[] execVM "client\functions\welcomeMessage.sqf";
 [] execVM "addons\TOParmaInfo\loadTOParmaInfo.sqf";
 

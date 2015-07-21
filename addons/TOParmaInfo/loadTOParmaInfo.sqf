@@ -26,14 +26,21 @@ _generalInfoString = "Website: <t color='#0091CD'><a href='http://www.matureanza
 _generalInfoText ctrlSetStructuredText parseText _generalInfoString;
 
 
-_rulesOnline = "http://www.matureanzacgamers.com";
+//_rulesOnline = "http://www.matureanzacgamers.com";
+
 _rulesOffline = "addons\TOParmaInfo\rules.html";
-_newsOnline = "http://www.matureanzacgamers.com";
+//_newsOnline = "http://www.matureanzacgamers.com";
 _newsOffline = "addons\TOParmaInfo\news.html";
+
 //_statsOnline = "http://arma.nl-united.nl/stats.php?uid=" + _uid;
-_statsOnline = "http://www.matureanzacgamers.com";
+
+//_statsOnline = "http://www.matureanzacgamers.com";
 _statsOffline = "addons\TOParmaInfo\stats.html";
 
+
+_rulesOnline = "addons\TOParmaInfo\rules.html";
+_newsOnline = "addons\TOParmaInfo\news.html";
+_statsOnline = "addons\TOParmaInfo\stats.html";
 
 //Load the correct HTML into the control
 _ctrlHTML = _display displayCtrl TOParmaInfo_Content_Rules;

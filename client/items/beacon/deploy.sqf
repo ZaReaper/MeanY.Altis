@@ -11,11 +11,10 @@
 #define ANIM "AinvPknlMstpSlayWrflDnon_medic"
 #define ERR_CANCELLED "Action Cancelled"
 #define ERR_IN_VEHICLE "Action Failed! You can't do this in a vehicle"
-#define ERR_DONATOR "Action Failed! You are not allowed to place a beacon near this base"
 #define MAX_BEACONS format ["You cannot deploy more then %1 spawnbeacons", [_MaxSpawnbeacons]]
 _MaxSpawnbeacons = ceil (["A3W_maxSpawnBeacons", 5] call getPublicVar);
 
-private ["_hasFailed", "_success","_pos","_uid","_beacon","_IsProtected","_IsAllowed","_beacons","_ownedBeacons"];
+private ["_hasFailed", "_success","_pos","_uid","_beacon","_beacons","_ownedBeacons"];
 
 _beacons = []; 
 { 
@@ -62,7 +61,7 @@ if (_success) then {
 		if (_x getVariable ["ownerUID",""] == _uid) then {
 			pvar_spawn_beacons = pvar_spawn_beacons - [_x];
 		};
-	} forEach pvar_spawn_beacons;*/ //Disabled. Was for old respawn menu which only allowed for 5 spawn beacons.
+	} forEach pvar_spawn_beacons;*/
 
 	pvar_spawn_beacons pushBack _beacon;
 	publicVariable "pvar_spawn_beacons";

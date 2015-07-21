@@ -26,7 +26,7 @@ else
 _unit allowFleeing 0;
 _unit setSkill _skill;
 _unit setSkill ["aimingAccuracy", (_unit skill "aimingAccuracy") * _accuracy];
-_unit setSkill ["courage", .8];
+_unit setSkill ["courage", .7];
 
 // Available skills are explained here: http://community.bistudio.com/wiki/AI_Sub-skills
 // Skill values are between 0 and 1

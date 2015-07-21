@@ -42,6 +42,253 @@ player createDiaryRecord ["changelog",
 "
 ]];
 
+player createDiaryRecord ["MatureAnzacGamers",
+ [
+"Mature Anzac Gamers",
+"
+<br/> +22/6/15 
+<br/> +Rebuild database, some saving script tweaks for performance
+<br/> +Rebuild AI zone triggers
+<br/> +Added in disable/enable environment button on player menu (Play with this, may or may not help performance)
+<br/> +Relocated a bunch of mission spawn locations
+
+<br/> +16/6/15
+<br/> +Independent bag item duping glitch re-fixed.
+<br/> +Rocket lock on cross-hair enabled
+<br/> +New fix to prevent fog limiting view range
+<br/> +Sitting down and then being tied up glitch fixed
+<br/> +Increased NEAR player view range setting to prevent grass flattening exploit
+<br/> +Fixed various typos and rearranged some functions to be more efficient
+
+<br/> +28/5/15
+<br/> +Fixed high value target script (Also rewrote and split up my hacked money value script)
+<br/> +Minor tweaks to base lockers and base locker hacking (server message on a locker being hacked is not working yet)
+<br/> +Tweaked weapon smugglers missions (balancing)
+<br/> +Adjusted and forced Altis Patrol mission payout
+
+<br/> +27/5/15
+<br/> +Fixed high value target script (Also rewrote and split up my hacked money value script)
+<br/> +Minor tweaks to base lockers and base locker hacking (server message on a locker being hacked is not working yet)
+<br/> +Tweaked weapon smugglers missions (balancing)
+<br/> +Adjusted and forced Altis Patrol mission payout
+
+<br/> +24/5/15
+<br/> +Items on restart will now be removed if not saved
+<br/> +Added in High value target for carrying too many drugs, also adjusted high value target value
+<br/> +Updated money anti-hack script
+<br/> +Increased time to hack base locker to 30 minutes
+<br/> +Added new Money missions + Patrol convoy
+<br/> +Added first try at a AI wave capture zone. (Athira)  (Testing, first try)
+<br/> +Disable base menu if the base locker is not locked. (Stop people using base lockers in someone else's bse to instant capture it)
+<br/> +Fixed Road Block and Altis Convoy missions
+<br/> +Fixed LSD store sell value
+<br/> +Adjusted AI zones to improve server performance
+<br/> +Increased teamspeak bandwidth so Pastor can use more words
+
+<br/> +15/5/15
+<br/> +Re-enabled 3rd person, working on a new method to fix corner camping
+
+<br/> +13/5/15
+<br/> +First try at conditional first/third person script implemented. (Third for all modes except when the weapon is out. Holster your weapon to stay in third person)
+
+<br/> +12/5/15
+<br/> +Added 3 new missions + GeoCache and Roadblock
+<br/> +Added new currency to the general stores and some missions (Player item instead of money, can be sold at stores or given to other characters
+<br/> +Disabled downed jet mission
+<br/> +Removed camo nets (No one was using them)
+<br/> +Disabled custom view distances in player menu
+<br/> +Fixed client side FPS temporarily by disabling all environmental sounds/effects (Ambient sounds/rabbits mainly) Will re-enable once they fix the problem
+<br/> +Added option to delete old spawn beacons
+<br/> +Tweaked thermal vision script to optimise waitUntil reducing CPS load (Cycles per second server side) 
+<br/> +Removed AI artillery tanks for now, Balance these on the break
+<br/> +Air drop adjusted to be more reliable at delivering your cargo
+<br/> +Roadblock mission should be fixed (Forgot to define global variable for mission marker arrays)
+
+<br/> +8/5/15 
+<br/> +Adjusted AI zones to occasionally be more exciting. Turned off helicopters for now as well
+<br/> +Changed the server memory allocator to a custom one to try help the FPS issue until they patch it
+<br/> +Added some script optimisations to try make findSafePosition work better with less server load
+<br/> +Found out the daMauler is the cause of every and all problems we have after extensive server analysis
+<br/> +Updated CBA to the latest RC6 Hotfix version (Clients don't have to, server requires it)
+
+<br/> +7/5/15 
+<br/> +Fixed heaps of script errors and optimisations
+<br/> +Script fixed and working + thermals disabled on all launchers(Enabled only for laser designator and UAV’s)
+<br/> +Added the ability to stealth knife AI and players if they are not in your group. Can also knife people who are injured for that personal touch
+<br/> +Fixes to unflip vehicle
+<br/> +Fixes to AI zones until Bohemia fix the FPS issues
+<br/> +Fixed insertion parachute airdrop function, will no longer remove your backpack or give you a parachute.
+
+<br/>  +6/5/15 
+<br/>  +Added flagpole halo jump and evac sites on the map. (Flag pole in stores)
+<br/>  +More minor fixes to spawn beacons
+<br/>  +Fixed error in airdrop script
+<br/>  +Blocked objects from being locked within 100m of stores/mission markers
+
+<br/>  +5/5/15
+<br/>  +Thermals back to normal for now
+<br/>  +First try at a fix for exploding vehicles on spawn
+<br/>  +Added safe zones to general stores to stop people camping in the store vendor building
+<br/>  +Fix spawn beacons not showing up correctly at all times
+<br/>  +Air drops won’t take as long to get to you now
+<br/>  +Adjusted AI zones
+<br/>  +players can only have 3 spawn beacons each
+<br/>  +Base items should no longer be deleted (aw yeah. I know some people have been waiting for this.) + needs to be confirmed
+
+<br/> +27/4/15
+<br/>  +Further code adjustments on base item saving
+<br/>  +Hand grenade damage and damage radius increased
+<br/>  +More Antihack updates (Trying to fix false positive random ban)
+<br/>  +Updated changelog on mission map
+<br/>  +Another fix for damaged base items (Hopefully completely solved now)
+
+<br/>  +27/4/15
+<br/>  +Further code adjustments on base item saving
+<br/>  +Hand grenade damage and damage radius increased
+<br/>  +More Antihack updates (Trying to fix false positive random ban)
+<br/>  +Updated changelog on mission map
+<br/>  +Another fix for damaged base items (Hopefully completely solved now)
+
+<br/> +25/4/15
+<br/> +Bounty mission added to mark players holding over a certain amount of money (Attempt to increase PVP.)
+<br/> +Three new stores added using the possible new store icons
+<br/> +Script added to detect and mark and shame and cheaters increasing player money value (Can not auto ban due to client side scripts. If you see this log the name and value so we can ban them. I may make it auto wipe the characters money and gear instead.)
+<br/> +Side channel disabled to reduce chat spam
+<br/> +Fixed script restriction kick when airdropping food sacks.
+
+<br/> +24/4/15
+<br/> +New hud (Aww yeah, tell me what you think)
+<br/> +Blufor team deleted
+<br/> +Boxes hopefully won't break now
+<br/> +Other minor fixes
+<br/> +Some icons updated in game to be more cool...
+<br/> +Day/Night times adjusted. Days 4 hours. Night 1 hour
+<br/> +MeanY is awesome.....Chappy is ok as well I guess
+
+<br/> +21/4/15
+<br/> +More code changes made to force base items indestructible. 
+<br/> +Town AI skill adjustments (slightly harder)
+<br/> +First pass on trying to make civilians fight more like soldiers (Mission AI)
+<br/> +Base locker should now be indestructible as well (Someone wanna spend some cash to test?)
+<br/> +Some minor code tweaks to try make base saving more reliable.
+<br/> +AI update so they search for cover better (was affecting server performance, client frame rates should be better when engaging AI)
+
+
+<br/> +13/4/15
+<br/> +Updated starter kit to include a NVGs so you can engage red zones at night on respawn Also added smoke nades and grenade to starting kit. 
+<br/> +Fixed base objects being destroyed. Definitely indestructible now.
+<br/> +Fixed stores getitem info script (Couldn’t see general store prices or uniform/backpack sizes)
+<br/> +Made changes to personal UAV system so only members of the owners group can connect to your UAV, not the whole team. 
+<br/> +Added Stabb to the whitelist ;)
+<br/> +Added mobile laser designator to items that can be loaded into vehicles and moved.
+<br/> +Fixed sniper rifle variants in store after the SOS became the MOS. Those rifles now come with a LPRS on purchase.
+<br/> +Fixed money dupe exploit (Didn’t think anyone found it before fixed)
+<br/> +Renamed MAG whitelist slots with class type on the end so you know which is medic or engineer/sniper/diver
+<br/> +Fixed rare save/load conditions where you player kit would be wiped.
+<br/> +Uniform checks updated so you can now see all the new vests and ghillie suits.
+<br/> +Other minor bugfixes and optimisations.
+
+<br/> +12/4/15 
+<br/> +Hardware upgrades and routing fix to sql server (Host side)
+<br/> +Server memory increased to 4gb
+<br/> +Backpacks no longer resupply from AI on Blufor. Unsure about independents. 
+<br/> +AI zones tweaked to occasionally include an AI transport chopper coming in with reinforcements. Transport trucks also working on patrol in some zones. 
+<br/> +AI tweaked and currently feel quite good. Balance is back to just about right I think (Feedback welcome)
+
+<br/> +11/4/15
+<br/> +AI skill tweaks
+<br/> +Magic player dots on the map removed
+<br/> +White-listing for MAG implemented. Other players can join but will be immediately moved back to the lobby.
+<br/> +Server side CBA_A3 updated to the latest version RC6 (still supporting RC4 and RC3)
+<br/> +Enemy red zones overhauled. Split all zones up so there will be more diversity on zones having trucks/static or not.
+<br/> +Performance tweaks
+<br/> +AI Mortars temporarily disabled while I complete damage reduction code 
+<br/> +Vest armour now has more effect. This applies to AI as well.
+<br/> +AI should now use Bi-pods
+<br/> +All base items should now be indestructible - Now more broken towers and garages(Needs to be confirmed)
+<br/> +Bandwidth tweaks to try and reduce de-sync issues
+<br/> +Player slots increased to 32
+<br/> +Girl camo should be fixed
+<br/> +Explosives are no longer visible on the map to other teams.
+
+<br/> +10/4/15
+<br/> +Base locker radius increased to 75m
+<br/> +Zafir ammo class fixed in stores (new more powerful ammo was added_
+<br/> +Supply air drop ammo crate updated with new ammo types
+<br/> +Removed duplicate ammo from stores lists
+<br/> +New girl camo added (Compliments of Fazz)
+<br/> +Changelogs added to Briefing.sqf so players can see it under map menu
+
+<br/> +9/4/15
+<br/> +Server updated to marksman, no major issues so far
+<br/> +Misspelled the 338 suppressors in stores. Updated
+<br/> +Fixed sell box contents for weapons (Now that bipods are in it doesn’t strip the gun properly. Increase attachments number so it is handled correctly)
+<br/> +Added missing items to store. Some more uniforms and remote designator
+<br/> +Lowered price of the Grave (For Padre)
+<br/> +Removed CCTV camera’s due to antihack script kicking when using them. Better to keep antihack increased then allow the camera’s (Would open people who know how the ability to spawn money)
+<br/> +Added base locker item to store. 
+<br/> +Added base locking location item. Pin code access but can be hacked. Will relock all items and other functions. Can also use it to turn lights on and off. Will prevent base griefing.(Hide it well). Other players can not place items in range or remove/unlock items in range. Have a play with this and report any bugs. 
+
+<br/> +8/4/15
+<br/> +Setup auto restart at 6:30 for steam update + Ill be asleep
+<br/> +Enabled all code for DLC items and weapons in stores + New version will load after auto update (Don't buy new guns until the update releases, they are in the list already)
+<br/> +Removed some inefficient items on the map increasing performance a lot (I got 15-25   fps)
+<br/> +Tweaked AI slightly trying to find the sweet spot
+<br/> +Completed a second pass on balancing guns and vehicle prices
+
+<br/> +8/4/15
+<br/> +Setup auto restart at 6:30 for steam update + Ill be asleep
+<br/> +Enabled all code for DLC items and weapons in stores + New version will load after auto update (Don't buy new guns until the update releases, they are in the list already)
+<br/> +Removed some inefficient items on the map increasing performance a lot (I got 15-25   fps)
+<br/> +Tweaked AI slightly trying to find the sweet spot
+<br/> +Completed a second pass on balancing guns and vehicle prices
+
+
+<br/> +7/4/15
+<br/> +Balanced light vehicles in zones. Removed GMG’s and HMG’s, Only transport trucks with infantry will be patrolling. You can choose to blow them up to avoid them all deploying and spreading out or attack the town and prepare for the reinforcements when they locate you. 
+<br/> +Edited Donation instructions and teamspeak instructions to funnel users to the MAG site. 
+<br/> +Air drop fixed and should now be working (I tested it and it didn’t kick or kill me)
+<br/> +All antihack improved after fixing the air drop issue. 
+<br/> +3 special MAG camo’s added compliments of Fazz on the graphics
+<br/> +Fixed notifymenu.sqf script error on client log in 
+<br/> +Fixed CBA version spawn on joining server
+<br/> +Removed iniDB and got extDB loaded and working….thats right working I tell you!!!!!. It 4am so it took a while but it’s working!!!!!
+
+<br/> +6/4/15
+<br/> +Air drop coding added to mission file. Not enable yet due to Anti hack slaying on vehicle creation. 
+<br/> +Tweaked Eos zones, reduced activation range and added light vehicles to possible pool.(Also fixed them after breaking them by accident)
+<br/> +Added code for mortar projectile damage reduction  (Will take 3 hits to kill a player)
+<br/> +All marksmen items and rifles have been coded in. Everything is commented out awaiting update.
+<br/> +Fixed box saving
+<br/> +Increased AI aiming speed but lowered AI accuracy. This should increase the battle effects and sense of being suppressed while the AI tries to land a shot. 
+
+<br/> +5/4/15
+<br/> +Automatic restart added at 1 AM, 9AM and 5PM AEST + Implemented countdown notice. needs testing
+<br/> +Included battleye filters to detect and kick hackers
+<br/> +Mission class updated and +init added to command line to force wasteland auto load on restart.  
+<br/> +Can now put explosive on vehicles and touch them off at range (Vehicles as bait?)
+<br/> +Doubled server memory allocation
+<br/> +Player slot mismatch in mission.sqm vs Description.ext fixed
+<br/> +Fixed typo in enemy outpost  side mission and incorrect colour defines for extra town invasion missions
+<br/> +MySQL setup on server ready for database migration attempts. (ExtDB)
+
+<br/> +4/4/15
+<br/> +BattleWarden RCON tool fully operational now. I'll leave trusty RCON recruiting to you Reaper. 
+<br/> +250ms ping limit enforced
+<br/> +Store inventory overhaul on existing stores
+<br/> +Many new items added
+<br/> +First pass on balancing prices and weights of base parts
+<br/> +Implement long timer to unlock other players base parts (prevent base griefing)
+<br/> +Ubeen/Fweedom Bug report + Resupply and owner trucks exploding + Painted all NPC trucks with anti nuclear coating. + FIXED
+<br/> +Added secret new chopper feature + Will be used in a custom mission at later date. Fast Ropes
+<br/> +Re-enabled mission vehicles saving
+<br/> +Disabled locked static weapons from saving after restart
+<br/> +Implemented new box for player storage (May not save after restart yet, ran out of time, needs testing)
+<br/> +Fixed typo in AI behaviour script
+<br/> +Initial investigation on new database system (I may be able to migrate the poxy one we have to the new Sql one without a server wipe.)
+"
+]];
+
 player createDiaryRecord ["changelog",
 [
 "v1.1b",
@@ -302,253 +549,6 @@ player createDiaryRecord ["changelog",
 "v0.9b",
 "
 <br/>[Initial release] - Welcome to Altis!
-"
-]];
-
-player createDiaryRecord ["MatureAnzacGamers",
- [
-"Mature Anzac Gamers",
-"
-<br/> -22/6/15 
-<br/> -Rebuild database, some saving script tweaks for performance
-<br/> -Rebuild AI zone triggers
-<br/> -Added in disable/enable environment button on player menu (Play with this, may or may not help performance)
-<br/> -Relocated a bunch of mission spawn locations
-
-<br/> -16/6/15
-<br/> -Independent bag item duping glitch re-fixed.
-<br/> -Rocket lock on cross-hair enabled
-<br/> -New fix to prevent fog limiting view range
-<br/> -Sitting down and then being tied up glitch fixed
-<br/> -Increased "NEAR" player view range setting to prevent grass flattening exploit
-<br/> -Fixed various typos and rearranged some functions to be more efficient
-
-<br/> -28/5/15
-<br/> -Fixed high value target script (Also rewrote and split up my hacked money value script)
-<br/> -Minor tweaks to base lockers and base locker hacking (server message on a locker being hacked is not working yet)
-<br/> -Tweaked weapon smugglers missions (balancing)
-<br/> -Adjusted and forced Altis Patrol mission payout
-
-<br/> -27/5/15
-<br/> -Fixed high value target script (Also rewrote and split up my hacked money value script)
-<br/> -Minor tweaks to base lockers and base locker hacking (server message on a locker being hacked is not working yet)
-<br/> -Tweaked weapon smugglers missions (balancing)
-<br/> -Adjusted and forced Altis Patrol mission payout
-
-<br/> -24/5/15
-<br/> -Items on restart will now be removed if not saved
-<br/> -Added in High value target for carrying too many drugs, also adjusted high value target value
-<br/> -Updated money anti-hack script
-<br/> -Increased time to hack base locker to 30<br/> - minutes
-<br/> -Added new Money missions - Patrol convoy
-<br/> -Added first try at a AI wave capture zone. (Athira)  (Testing, first try)
-<br/> -Disable base menu if the base locker is not locked. (Stop people using base lockers in someone else's bse to instant capture it)
-<br/> -Fixed Road Block and Altis Convoy missions
-<br/> -Fixed LSD store sell value
-<br/> -Adjusted AI zones to improve server performance
-<br/> -Increased teamspeak bandwidth so Pastor can use more words
-
-<br/> -15/5/15
-<br/> -Re-enabled 3rd person, working on a new method to fix corner camping
-
-<br/> -13/5/15
-<br/> -First try at conditional first/third person script implemented. (Third for all modes except when the weapon is out. Holster your weapon to stay in third person)
-
-<br/> -12/5/15
-<br/> -Added 3 new missions - GeoCache and Roadblock
-<br/> -Added new currency to the general stores and some missions (Player item instead of money, can be sold at stores or given to other characters
-<br/> -Disabled downed jet mission
-<br/> -Removed camo nets (No one was using them)
-<br/> -Disabled custom view distances in player menu
-<br/> -Fixed client side FPS temporarily by disabling all environmental sounds/effects (Ambient sounds/rabbits mainly) Will re-enable once they fix the problem
-<br/> -Added option to delete old spawn beacons
-<br/> -Tweaked thermal vision script to optimise waitUntil reducing CPS load (Cycles per second server side) 
-<br/> -Removed AI artillery tanks for now, Balance these on the break
-<br/> -Air drop adjusted to be more reliable at delivering your cargo
-<br/> -Roadblock mission should be fixed (Forgot to define global variable for mission marker arrays)
-
-<br/> -8/5/15 
-<br/> -Adjusted AI zones to occasionally be more exciting. Turned off helicopters for now as well
-<br/> -Changed the server memory allocator to a custom one to try help the FPS issue until they patch it
-<br/> -Added some script optimisations to try make findSafePosition work better with less server load
-<br/> -Found out the daMauler is the cause of every and all problems we have after extensive server analysis
-<br/> -Updated CBA to the latest RC6 Hotfix version (Clients don't have to, server requires it)
-
-<br/> -7/5/15 
-<br/> -Fixed heaps of script errors and optimisations
-<br/> -Script fixed and working - thermals disabled on all launchers(Enabled only for laser designator and UAV’s)
-<br/> -Added the ability to stealth knife AI and players if they are not in your group. Can also knife people who are injured for that personal touch
-<br/> -Fixes to unflip vehicle
-<br/> -Fixes to AI zones until Bohemia fix the FPS issues
-<br/> -Fixed insertion parachute airdrop function, will no longer remove your backpack or give you a parachute.
-
-<br/> -6/5/15 
-<br/>  -Added flagpole halo jump and evac sites on the map. (Flag pole in stores)
-<br/>  -More minor fixes to spawn beacons
-<br/>  -Fixed error in airdrop script
-<br/>  -Blocked objects from being locked within 100m of stores/mission markers
-
-<br/> -5/5/15
-<br/>  -Thermals back to normal for now
-<br/>  -First try at a fix for exploding vehicles on spawn
-<br/>  -Added safe zones to general stores to stop people camping in the store vendor building
-<br/>  -Fix spawn beacons not showing up correctly at all times
-<br/>  -Air drops won’t take as long to get to you now
-<br/>  -Adjusted AI zones
-<br/>  -players can only have 3 spawn beacons each
-<br/>  -Base items should no longer be deleted (aw yeah. I know some people have been waiting for this.) - needs to be confirmed
-
-<br/> -27/4/15
-<br/>  -Further code adjustments on base item saving
-<br/>  -Hand grenade damage and damage radius increased
-<br/>  -More Antihack updates (Trying to fix false positive random ban)
-<br/>  -Updated changelog on mission map
-<br/>  -Another fix for damaged base items (Hopefully completely solved now)
-
-<br/> -27/4/15
-<br/>  -Further code adjustments on base item saving
-<br/>  -Hand grenade damage and damage radius increased
-<br/>  -More Antihack updates (Trying to fix false positive random ban)
-<br/>  -Updated changelog on mission map
-<br/>  -Another fix for damaged base items (Hopefully completely solved now)
-
-<br/>-25/4/15
-<br/> -Bounty mission added to mark players holding over a certain amount of money (Attempt to increase PVP.)
-<br/> -Three new stores added using the possible new store icons
-<br/> -Script added to detect and mark and shame and cheaters increasing player money value (Can not auto ban due to client side scripts. If you see this log the name and value so we can ban them. I may make it auto wipe the characters money and gear instead.)
-<br/> -Side channel disabled to reduce chat spam
-<br/> -Fixed script restriction kick when airdropping food sacks.
-
-<br/>-24/4/15
-<br/> -New hud (Aww yeah, tell me what you think)
-<br/> -Blufor team deleted
-<br/> -Boxes hopefully won't break now
-<br/> -Other minor fixes
-<br/> -Some icons updated in game to be more cool...
-<br/> -Day/Night times adjusted. Days 4 hours. Night 1 hour
-<br/> -MeanY is awesome.....Chappy is ok as well I guess
-
-<br/> -21/4/15
-<br/> -More code changes made to force base items indestructible. 
-<br/> -Town AI skill adjustments (slightly harder)
-<br/> -First pass on trying to make civilians fight more like soldiers (Mission AI)
-<br/> -Base locker should now be indestructible as well (Someone wanna spend some cash to test?)
-<br/> -Some minor code tweaks to try make base saving more reliable.
-<br/> -AI update so they search for cover better (was affecting server performance, client frame rates should be better when engaging AI)
-
-
-<br/> -13/4/15
-<br/> -Updated starter kit to include a NVGs so you can engage red zones at night on respawn Also added smoke nades and grenade to starting kit. 
-<br/> -Fixed base objects being destroyed. Definitely indestructible now.
-<br/> -Fixed stores getitem info script (Couldn’t see general store prices or uniform/backpack sizes)
-<br/> -Made changes to personal UAV system so only members of the owners group can connect to your UAV, not the whole team. 
-<br/> -Added Stabb to the whitelist ;)
-<br/> -Added mobile laser designator to items that can be loaded into vehicles and moved.
-<br/> -Fixed sniper rifle variants in store after the SOS became the MOS. Those rifles now come with a LPRS on purchase.
-<br/> -Fixed money dupe exploit (Didn’t think anyone found it before fixed)
-<br/> -Renamed MAG whitelist slots with class type on the end so you know which is medic or engineer/sniper/diver
-<br/> -Fixed rare save/load conditions where you player kit would be wiped.
-<br/> -Uniform checks updated so you can now see all the new vests and ghillie suits.
-<br/> -Other minor bugfixes and optimisations.
-
-<br/>-12/4/15 
-<br/> -Hardware upgrades and routing fix to sql server (Host side)
-<br/> -Server memory increased to 4gb
-<br/> -Backpacks no longer resupply from AI on Blufor. Unsure about independents. 
-<br/> -AI zones tweaked to occasionally include an AI transport chopper coming in with reinforcements. Transport trucks also working on patrol in some zones. 
-<br/> -AI tweaked and currently feel quite good. Balance is back to just about right I think (Feedback welcome)
-
-<br/>-11/4/15
-<br/> -AI skill tweaks
-<br/> -Magic player dots on the map removed
-<br/> -White-listing for MAG implemented. Other players can join but will be immediately moved back to the lobby.
-<br/> -Server side CBA_A3 updated to the latest version RC6 (still supporting RC4 and RC3)
-<br/> -Enemy red zones overhauled. Split all zones up so there will be more diversity on zones having trucks/static or not.
-<br/> -Performance tweaks
-<br/> -AI Mortars temporarily disabled while I complete damage reduction code 
-<br/> -Vest armour now has more effect. This applies to AI as well.
-<br/> -AI should now use Bi-pods
-<br/> -All base items should now be indestructible - Now more broken towers and garages(Needs to be confirmed)
-<br/> -Bandwidth tweaks to try and reduce de-sync issues
-<br/> -Player slots increased to 32
-<br/> -Girl camo should be fixed
-<br/> -Explosives are no longer visible on the map to other teams.
-
-<br/>-10/4/15
-<br/> -Base locker radius increased to 75m
-<br/> -Zafir ammo class fixed in stores (new more powerful ammo was added_
-<br/> -Supply air drop ammo crate updated with new ammo types
-<br/> -Removed duplicate ammo from stores lists
-<br/> -New girl camo added (Compliments of Fazz)
-<br/> -Changelogs added to Briefing.sqf so players can see it under map menu
-
-<br/>-9/4/15
-<br/> -Server updated to marksman, no major issues so far
-<br/> -Misspelled the 338 suppressors in stores. Updated
-<br/> -Fixed sell box contents for weapons (Now that bipods are in it doesn’t strip the gun properly. Increase attachments number so it is handled correctly)
-<br/> -Added missing items to store. Some more uniforms and remote designator
-<br/> -Lowered price of the Grave (For Padre)
-<br/> -Removed CCTV camera’s due to antihack script kicking when using them. Better to keep antihack increased then allow the camera’s (Would open people who know how the ability to spawn money)
-<br/> -Added base locker item to store. 
-<br/> -Added base locking location item. Pin code access but can be hacked. Will relock all items and other functions. Can also use it to turn lights on and off. Will prevent base griefing.(Hide it well). Other players can not place items in range or remove/unlock items in range. Have a play with this and report any bugs. 
-
-<br/>-8/4/15
-<br/> -Setup auto restart at 6:30 for steam update - Ill be asleep
-<br/> -Enabled all code for DLC items and weapons in stores - New version will load after auto update (Don't buy new guns until the update releases, they are in the list already)
-<br/> -Removed some inefficient items on the map increasing performance a lot (I got 15-25   fps)
-<br/> -Tweaked AI slightly trying to find the sweet spot
-<br/> -Completed a second pass on balancing guns and vehicle prices
-
-<br/>-8/4/15
-<br/> -Setup auto restart at 6:30 for steam update - Ill be asleep
-<br/> -Enabled all code for DLC items and weapons in stores - New version will load after auto update (Don't buy new guns until the update releases, they are in the list already)
-<br/> -Removed some inefficient items on the map increasing performance a lot (I got 15-25   fps)
-<br/> -Tweaked AI slightly trying to find the sweet spot
-<br/> -Completed a second pass on balancing guns and vehicle prices
-
-
-<br/>-7/4/15
-<br/> -Balanced light vehicles in zones. Removed GMG’s and HMG’s, Only transport trucks with infantry will be patrolling. You can choose to blow them up to avoid them all deploying and spreading out or attack the town and prepare for the reinforcements when they locate you. 
-<br/> -Edited Donation instructions and teamspeak instructions to funnel users to the MAG site. 
-<br/> -Air drop fixed and should now be working (I tested it and it didn’t kick or kill me)
-<br/> -All antihack improved after fixing the air drop issue. 
-<br/> -3 special MAG camo’s added compliments of Fazz on the graphics
-<br/> -Fixed notifymenu.sqf script error on client log in 
-<br/> -Fixed CBA version spawn on joining server
-<br/> -Removed iniDB and got extDB loaded and working….thats right working I tell you!!!!!. It 4am so it took a while but it’s working!!!!!
-
-<br/>-6/4/15
-<br/> -Air drop coding added to mission file. Not enable yet due to Anti hack slaying on vehicle creation. 
-<br/> -Tweaked Eos zones, reduced activation range and added light vehicles to possible pool.(Also fixed them after breaking them by accident)
-<br/> -Added code for mortar projectile damage reduction  (Will take 3 hits to kill a player)
-<br/> -All marksmen items and rifles have been coded in. Everything is commented out awaiting update.
-<br/> -Fixed box saving
-<br/> -Increased AI aiming speed but lowered AI accuracy. This should increase the battle effects and sense of being suppressed while the AI tries to land a shot. 
-
-<br/>-5/4/15
-<br/> -Automatic restart added at 1 AM, 9AM and 5PM AEST - Implemented countdown notice. needs testing
-<br/> -Included battleye filters to detect and kick hackers
-<br/> -Mission class updated and -init added to command line to force wasteland auto load on restart.  
-<br/> -Can now put explosive on vehicles and touch them off at range (Vehicles as bait?)
-<br/> -Doubled server memory allocation
-<br/> -Player slot mismatch in mission.sqm vs Description.ext fixed
-<br/> -Fixed typo in enemy outpost  side mission and incorrect colour defines for extra town invasion missions
-<br/> -MySQL setup on server ready for database migration attempts. (ExtDB)
-
-<br/>-4/4/15
-<br/> -BattleWarden RCON tool fully operational now. I'll leave trusty RCON recruiting to you Reaper. 
-<br/> -250ms ping limit enforced
-<br/> -Store inventory overhaul on existing stores
-<br/> -Many new items added
-<br/> -First pass on balancing prices and weights of base parts
-<br/> -Implement long timer to unlock other players base parts (prevent base griefing)
-<br/> -Ubeen/Fweedom Bug report - Resupply and owner trucks exploding - Painted all NPC trucks with anti nuclear coating. - FIXED
-<br/> -Added secret new chopper feature - Will be used in a custom mission at later date. Fast Ropes
-<br/> -Re-enabled mission vehicles saving
-<br/> -Disabled locked static weapons from saving after restart
-<br/> -Implemented new box for player storage (May not save after restart yet, ran out of time, needs testing)
-<br/> -Fixed typo in AI behaviour script
-<br/> -Initial investigation on new database system (I may be able to migrate the poxy one we have to the new Sql one without a server wipe.)
 "
 ]];
 

@@ -88,7 +88,7 @@ class playerSettings {
 			x = 0.06; y = 0.313;
 			w = 0.3; h = 0.05;
 		};
-		
+
 		class distanceText : w_RscText {
 			idc = view_range_text;
 			text = "View range:";
@@ -159,11 +159,11 @@ class playerSettings {
 			x = 0.158; y = 0.66;
 			w = 0.225; h = 0.033 * safezoneH;
 		};
-		
+
 		class btnDistanceNear : w_RscButton {
 			idc = -1;
 			text = "Near";
-			onButtonClick = "setViewDistance 1500;";
+			onButtonClick = "setViewDistance 1500; setObjectViewDistance 1500;";
 			x = 0.02; y = 0.43;
 			w = 0.125; h = 0.033 * safezoneH;
 		};
@@ -171,7 +171,7 @@ class playerSettings {
 		class btnDistanceMedium : w_RscButton {
 			idc = -1;
 			text = "Medium";
-			onButtonClick = "setViewDistance 3000;";
+			onButtonClick = "setViewDistance 3000; setObjectViewDistance 3000;";
 			x = 0.02; y = 0.5;
 			w = 0.125; h = 0.033 * safezoneH;
 		};
@@ -179,21 +179,21 @@ class playerSettings {
 		class btnDistanceFar : w_RscButton {
 			idc = -1;
 			text = "Far";
-			onButtonClick = "setViewDistance 4000;";
+			onButtonClick = "setViewDistance 4000; setObjectViewDistance 4000;";
 			x = 0.02; y = 0.57;
 			w = 0.125; h = 0.033 * safezoneH;
 		};
 		
-		/*class btnDistanceCustom : w_RscButton {
+		class btnDistanceCustom : w_RscButton {
 			idc = -1;
 			text = "Custom";
-			onButtonClick = "[] execVM 'addons\taw_vd\fn_openTAWVD.sqf'";
+			onButtonClick = "call CHVD_fnc_openDialog";
 			x = 0.158; y = 0.57;
 			w = 0.125; h = 0.033 * safezoneH;
-		};*/ // Disable viewdistance button for now
+		};
 
 		
-				class TOParmaInfoButton : w_RscButton {
+		class TOParmaInfoButton : w_RscButton {
 			idc = -1;
 			text = "News/Info";
 			onButtonClick = "[] execVM 'addons\TOParmaInfo\loadTOParmaInfo.sqf'";
