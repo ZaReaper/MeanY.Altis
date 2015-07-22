@@ -47,7 +47,7 @@ _man4 addMagazine "20Rnd_762x51_Mag";
 _man4 addWeapon "srifle_EBR_SOS_F";
 _man4 addMagazine "20Rnd_762x51_Mag";
 _man4 addMagazine "20Rnd_762x51_Mag";
-_man4 addItem "Rangefinder";
+_man4 addItem "Laserdesignator";
 
 // Spotter
 _man5 = _group createUnit ["C_man_polo_3_F", [_pos select 0, (_pos select 1) + 30, 0], [], 1, "Form"];

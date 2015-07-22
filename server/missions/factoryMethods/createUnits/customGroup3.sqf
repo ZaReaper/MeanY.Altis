@@ -37,8 +37,9 @@ for "_i" from 1 to _nbUnits do
 	removeHeadgear _unit;
 	removeGoggles _unit;
 
-	_unit addVest "V_TacVest_blk_POLICE";
-	_unit addUniform "U_C_Driver_3";
+	_unit addVest "V_PlateCarrierH_CTRG";
+	_unit addUniform "U_B_CTRG_1";
+	_unit addHeadgear "H_HelmetB_light_snakeskin";
 
 	switch (true) do
 	{
@@ -47,7 +48,7 @@ for "_i" from 1 to _nbUnits do
 		{
 			_unit addBackpack "B_Carryall_oli";
 			_unit addMagazine "30Rnd_65x39_caseless_mag";
-			_unit addWeapon "arifle_MXM_Black_F";
+			_unit addWeapon "arifle_MX_Black_F";
 			_unit addMagazine "30Rnd_65x39_caseless_mag";
 			_unit addMagazine "30Rnd_65x39_caseless_mag";
 			_unit addMagazine "30Rnd_65x39_caseless_mag";
@@ -66,6 +67,7 @@ for "_i" from 1 to _nbUnits do
 			_unit addMagazine "7Rnd_408_Mag";
 			_unit addMagazine "7Rnd_408_Mag";
 			_unit addMagazine "7Rnd_408_Mag";
+			_unit addMagazine "7Rnd_408_Mag";
 			_unit addPrimaryWeaponItem "optic_tws";
 		};
 		// AA every 7 units
@@ -73,7 +75,7 @@ for "_i" from 1 to _nbUnits do
 		{
 			_unit addBackpack "B_Carryall_oli";
 			_unit addMagazine "30Rnd_65x39_caseless_mag";
-			_unit addWeapon "arifle_MXM_Black_F";
+			_unit addWeapon "arifle_MX_Black_F";
 			_unit addMagazine "30Rnd_65x39_caseless_mag";
 			_unit addMagazine "30Rnd_65x39_caseless_mag";
 			_unit addMagazine "30Rnd_65x39_caseless_mag";
@@ -113,7 +115,6 @@ for "_i" from 1 to _nbUnits do
 	_unit enablegunlights "forceOn";
 
 	_unit addRating 1e11;
-	_unit addHeadgear "H_Cap_press";
 	_unit addGoggles "G_Balaclava_blk";
 	_unit spawn refillPrimaryAmmo;
 	_unit call setMissionSkill;
