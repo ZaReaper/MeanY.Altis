@@ -37,15 +37,11 @@ for "_i" from 1 to _nbUnits do
 	removeVest _unit;
 	removeBackpack _unit;
 	
+	_unit addUniform "U_B_CombatUniform_mcam";
 	_unit addVest "V_PlateCarrier2_rgr";
-	_unit addMagazine "30Rnd_556x45_Stanag";
-	_unit addMagazine "30Rnd_556x45_Stanag";
-	_unit addMagazine "30Rnd_556x45_Stanag";
-	_unit addPrimaryWeaponItem "optic_Aco";
 	_unit addHeadgear "H_HelmetB_plain_mcamo";
 	_unit addGoggles "G_Balaclava_blk";
-	_unit addMagazine "HandGrenade";
-	_unit addMagazine "SmokeShellPurple";
+
 
 	switch (true) do
 	{
@@ -55,11 +51,17 @@ for "_i" from 1 to _nbUnits do
 			_unit addVest "V_PlateCarrierGL_rgr";
 			_unit addHeadgear "H_HelmetB_desert";
 			_unit addMagazine "1Rnd_HE_Grenade_shell";
+			_unit addMagazine "30Rnd_556x45_Stanag";
 			_unit addWeapon "arifle_TRG21_GL_F";
-			_unit addPrimaryWeaponItem "optic_MRCO";
+			_unit addPrimaryWeaponItem "optic_Holosight";
 			_unit addMagazine "1Rnd_HE_Grenade_shell";
 			_unit addMagazine "1Rnd_HE_Grenade_shell";
 			_unit addMagazine "1Rnd_SmokeRed_Grenade_shell";
+			_unit addMagazine "30Rnd_556x45_Stanag";
+			_unit addMagazine "30Rnd_556x45_Stanag";
+			_unit addMagazine "30Rnd_556x45_Stanag";
+			_unit addMagazine "HandGrenade";
+			_unit addMagazine "SmokeShellPurple";
 		};
 		// RPG every 7 units, starting from second one
 		case ((_i + 5) % 7 == 0):
@@ -67,31 +69,52 @@ for "_i" from 1 to _nbUnits do
 			_unit addVest "V_PlateCarrierGL_rgr";
 			_unit addHeadgear "H_HelmetB_black";
 			_unit addBackpack "B_Kitbag_mcamo";
+			_unit addMagazine "30Rnd_556x45_Stanag";
 			_unit addWeapon "arifle_TRG20_F";
 			_unit addPrimaryWeaponItem "optic_Holosight";
 			_unit addMagazine "Titan_AT";
 			_unit addWeapon "launch_Titan_short_F";
 			_unit addMagazine "Titan_AT";
 			_unit addMagazine "Titan_AT";
+			_unit addMagazine "30Rnd_556x45_Stanag";
+			_unit addMagazine "30Rnd_556x45_Stanag";
+			_unit addMagazine "30Rnd_556x45_Stanag";
+			_unit addMagazine "HandGrenade";
+			_unit addMagazine "SmokeShellPurple";
 		};
 		// Rifleman
 		default
-		{
+		{	
+	
+			
 			if (_unit == leader _group) then
 			{
+				_unit addMagazine "30Rnd_556x45_Stanag";
 				_unit addWeapon "arifle_TRG21_F";
+				_unit addMagazine "30Rnd_556x45_Stanag";
+				_unit addMagazine "30Rnd_556x45_Stanag";
+				_unit addHeadgear "H_HelmetSpecB_paint1";
+				_unit addMagazine "HandGrenade";
+				_unit addMagazine "SmokeShellPurple";
+				_unit addPrimaryWeaponItem "optic_Hamr";
 				_unit setRank "SERGEANT";
 			}
 			else
 			{
+				_unit addMagazine "30Rnd_556x45_Stanag";
 				_unit addWeapon "arifle_TRG20_F";
+				_unit addMagazine "30Rnd_556x45_Stanag";
+				_unit addMagazine "30Rnd_556x45_Stanag";
+				_unit addMagazine "HandGrenade";
+				_unit addMagazine "SmokeShellPurple";
+				_unit addPrimaryWeaponItem "optic_Aco";
 			};
 		};
 	};
 
 	_unit addPrimaryWeaponItem "acc_flashlight";
 	_unit enablegunlights "forceOn";
-
+	
 	_unit addRating 1e11;
 	_unit spawn refillPrimaryAmmo;
 	_unit call setMissionSkill;

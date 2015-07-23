@@ -40,6 +40,7 @@ for "_i" from 1 to _nbUnits do
 	_unit addVest "V_PlateCarrierH_CTRG";
 	_unit addUniform "U_B_CTRG_1";
 	_unit addHeadgear "H_HelmetB_light_snakeskin";
+	_unit addGoggles "G_Balaclava_blk";
 
 	switch (true) do
 	{
@@ -58,6 +59,8 @@ for "_i" from 1 to _nbUnits do
 			_unit addMagazine "Titan_AT";
 			_unit addMagazine "Titan_AT";
 			_unit selectWeapon "launch_Titan_short_F";
+			_unit addMagazine "HandGrenade";
+			_unit addMagazine "SmokeShellPurple";
 		};
 		// Sniper every 6 units
 		case (_i % 6 == 0):
@@ -69,6 +72,8 @@ for "_i" from 1 to _nbUnits do
 			_unit addMagazine "7Rnd_408_Mag";
 			_unit addMagazine "7Rnd_408_Mag";
 			_unit addPrimaryWeaponItem "optic_tws";
+			_unit addMagazine "HandGrenade";
+			_unit addMagazine "SmokeShellPurple";
 		};
 		// AA every 7 units
 		case (_i % 7 == 0):
@@ -85,6 +90,8 @@ for "_i" from 1 to _nbUnits do
 			_unit addMagazine "Titan_AA";
 			_unit addMagazine "Titan_AA";
 			_unit selectWeapon "launch_I_Titan_F";
+			_unit addMagazine "HandGrenade";
+			_unit addMagazine "SmokeShellPurple";
 		};
 		// Rifleman
 		default
@@ -97,6 +104,8 @@ for "_i" from 1 to _nbUnits do
 				_unit addMagazine "30Rnd_65x39_caseless_mag";
 				_unit addMagazine "30Rnd_65x39_caseless_mag";
 				_unit addPrimaryWeaponItem "optic_Hamr";
+				_unit addMagazine "HandGrenade";
+				_unit addMagazine "SmokeShellPurple";
 				_unit setRank "SERGEANT";
 			}
 			else
@@ -107,6 +116,8 @@ for "_i" from 1 to _nbUnits do
 				_unit addMagazine "30Rnd_65x39_caseless_mag";
 				_unit addMagazine "30Rnd_65x39_caseless_mag";
 				_unit addPrimaryWeaponItem "optic_Hamr";
+				_unit addMagazine "HandGrenade";
+				_unit addMagazine "SmokeShellPurple";
 			};
 		};
 	};
@@ -115,7 +126,6 @@ for "_i" from 1 to _nbUnits do
 	_unit enablegunlights "forceOn";
 
 	_unit addRating 1e11;
-	_unit addGoggles "G_Balaclava_blk";
 	_unit spawn refillPrimaryAmmo;
 	_unit call setMissionSkill;
 	_unit addEventHandler ["Killed", server_playerDied];
